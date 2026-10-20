@@ -1,8 +1,10 @@
 function TaskItem({ task }) {
+  const completedClass = task.completed ? "completed" : "";
+
   return (
-    <li className="task-item">
-      <span>{task.title}</span>
-      <span> - {task.priority}</span>
+    <li className={`task-card priority-${task.priority} ${completedClass}`}>
+      <span className="task-title">{task.title}</span>
+      <span className="task-priority">{task.priority}</span>
     </li>
   );
 }
